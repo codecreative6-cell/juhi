@@ -83,10 +83,12 @@
   margin-bottom: .8rem;
 }
 .splash-title {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Abril Fatface', serif;
   font-size: clamp(3.5rem, 14vw, 7rem);
-  font-weight: 900;
-  line-height: .9;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: .04em;
+  padding: .1em 0;
   background: linear-gradient(138deg, #F5E6C8 5%, #D4AF37 38%, #FF8C00 68%, #D4AF37 92%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -419,9 +421,12 @@ body {
   margin-bottom: 1.1rem; opacity: .8;
 }
 .hero-name {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Abril Fatface', serif;
   font-size: clamp(5rem, 22vw, 15rem);
-  font-weight: 900; line-height: .88;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: .04em;
+  padding: .05em 0;
   background: linear-gradient(138deg,
     #F5E6C8  5%,
     #D4AF37 38%,
