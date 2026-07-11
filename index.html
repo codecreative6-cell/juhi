@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Juhi — The Voice</title>
+  <meta name="description" content="Juhi — Singer, Performer, Artist. Where Soul Meets Song.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ══ BACKGROUND MUSIC ════════════════════════ -->
+<audio id="bgMusic" loop preload="auto">
+  <source src="ab.mp3" type="audio/mpeg">
+</audio>
+
+<!-- ══ MUSIC TOGGLE BUTTON ═════════════════════ -->
+<button class="music-toggle" id="musicToggle" aria-label="Toggle music" title="Toggle music">
+  <!-- Speaker on icon -->
+  <svg class="icon-on" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 8.5v7a4.5 4.5 0 0 0 2.5-3.5zM14 3.23v2.06a7 7 0 0 1 0 13.42v2.06A9 9 0 0 0 14 3.23z"/>
+  </svg>
+  <!-- Speaker off icon -->
+  <svg class="icon-off" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16.5 12A4.5 4.5 0 0 0 14 8.5v2.09l2.41 2.41c.06-.31.09-.65.09-1zm2.5 0a7 7 0 0 1-.57 2.8l1.51 1.51A9 9 0 0 0 21 12c0-4.28-2.99-7.86-7-8.77v2.06A7 7 0 0 1 19 12zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06a9 9 0 0 0 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+  </svg>
+</button>
+
+<!-- ══ STAR FIELD ══════════════════════════════ -->
+<svg class="stars" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <circle cx="7%"  cy="4%"  r="1"   fill="#D4AF37" style="animation:twinkle 2.3s  .1s infinite"/>
+  <circle cx="19%" cy="11%" r="1.5" fill="#F5E6C8" style="animation:twinkle 3.1s  .7s infinite"/>
+  <circle cx="34%" cy="3%"  r="1"   fill="#D4AF37" style="animation:twinkle 2.8s 1.5s infinite"/>
+  <circle cx="52%" cy="9%"  r="1"   fill="#F5E6C8" style="animation:twinkle 3.5s  .3s infinite"/>
+  <circle cx="69%" cy="6%"  r="1.5" fill="#D4AF37" style="animation:twinkle 2.1s 1.1s infinite"/>
+  <circle cx="85%" cy="14%" r="1"   fill="#F5E6C8" style="animation:twinkle 3.8s  .5s infinite"/>
+  <circle cx="93%" cy="8%"  r="1"   fill="#D4AF37" style="animation:twinkle 2.6s 1.8s infinite"/>
+  <circle cx="2%"  cy="26%" r="1.5" fill="#F5E6C8" style="animation:twinkle 3.3s  .9s infinite"/>
+  <circle cx="96%" cy="36%" r="1"   fill="#D4AF37" style="animation:twinkle 2.4s  .2s infinite"/>
+  <circle cx="11%" cy="41%" r="1"   fill="#F5E6C8" style="animation:twinkle 4.0s 1.4s infinite"/>
+  <circle cx="61%" cy="21%" r="1"   fill="#D4AF37" style="animation:twinkle 2.9s  .6s infinite"/>
+  <circle cx="43%" cy="32%" r="1.5" fill="#F5E6C8" style="animation:twinkle 3.6s 1.2s infinite"/>
+  <circle cx="79%" cy="44%" r="1"   fill="#D4AF37" style="animation:twinkle 2.2s  .4s infinite"/>
+  <circle cx="26%" cy="57%" r="1"   fill="#F5E6C8" style="animation:twinkle 3.0s 1.6s infinite"/>
+  <circle cx="89%" cy="62%" r="1.5" fill="#D4AF37" style="animation:twinkle 2.7s  .8s infinite"/>
+  <circle cx="5%"  cy="72%" r="1"   fill="#F5E6C8" style="animation:twinkle 3.4s  .0s infinite"/>
+  <circle cx="48%" cy="77%" r="1"   fill="#D4AF37" style="animation:twinkle 2.5s 1.0s infinite"/>
+  <circle cx="68%" cy="66%" r="1.5" fill="#F5E6C8" style="animation:twinkle 3.7s 1.3s infinite"/>
+  <circle cx="97%" cy="81%" r="1"   fill="#D4AF37" style="animation:twinkle 2.0s  .7s infinite"/>
+  <circle cx="17%" cy="86%" r="1"   fill="#F5E6C8" style="animation:twinkle 3.2s 1.7s infinite"/>
+  <circle cx="54%" cy="91%" r="1"   fill="#D4AF37" style="animation:twinkle 2.8s  .3s infinite"/>
+  <circle cx="81%" cy="97%" r="1.5" fill="#F5E6C8" style="animation:twinkle 3.9s 1.5s infinite"/>
+  <circle cx="32%" cy="93%" r="1"   fill="#D4AF37" style="animation:twinkle 2.3s  .6s infinite"/>
+  <circle cx="73%" cy="29%" r="1"   fill="#F5E6C8" style="animation:twinkle 4.1s 1.9s infinite"/>
+  <circle cx="44%" cy="49%" r="1"   fill="#D4AF37" style="animation:twinkle 2.6s  .2s infinite"/>
+</svg>
+
+<!-- ══ HERO ══════════════════════════════════════ -->
+<section class="hero" id="hero">
+
+  <!-- ── Sound Mandala ── -->
+  <div class="mandala" aria-hidden="true">
+    <svg width="700" height="700" viewBox="-350 -350 700 700"
+         xmlns="http://www.w3.org/2000/svg">
+
+      <!-- Guide rings -->
+      <circle r="330" fill="none" stroke="rgba(212,175,55,.04)" stroke-width=".5"/>
+      <circle r="268" fill="none" stroke="rgba(255,140,0,.06)"  stroke-width=".5" stroke-dasharray="3 8"/>
+      <circle r="205" fill="none" stroke="rgba(212,175,55,.08)" stroke-width=".5" stroke-dasharray="5 5"/>
+      <circle r="140" fill="none" stroke="rgba(255,140,0,.10)"  stroke-width=".5"/>
+      <circle r=" 82" fill="none" stroke="rgba(212,175,55,.08)" stroke-width=".5" stroke-dasharray="2 5"/>
+
+      <!-- Outer ring — 12 spokes, clockwise -->
+      <g class="ring-a">
+        <g transform="rotate(  0)"><line x1="0" y1="-328" x2="0" y2="-274" stroke="rgba(212,175,55,.28)" stroke-width="1.5"/><circle cx="0" cy="-335" r="3.5" fill="rgba(212,175,55,.52)"/></g>
+        <g transform="rotate( 30)"><line x1="0" y1="-328" x2="0" y2="-274" stroke="rgba(212,175,55,.28)" stroke-width="1.5"/><circle cx="0" cy="-335" r="3.5" fill="rgba(212,175,55,.52)"/></g>
+        <g transform="rotate( 60)"><line x1="0" y1="-328" x2="0" y2="-274" stroke="rgba(212,175,55,.28)" stroke-width="1.5"/><circle cx="0" cy="-335" r="3.5" fill="rgba(212,175,55,.52)"/></g>
+        <g transform="rotate( 90)"><line x1="0" y1="-328" x2="0" y2="-274" stroke="rgba(212,175,55,.28)" stroke-width="1.5"/><circle cx="0" cy="-335" r="3.5" fill="rgba(212,175,55,.52)"/></g>
+        <g transform="rotate(120)"><line x1="0" y1="-328" x2="0" y2="-274" stroke="rgba(212,175,55,.28)" stroke-width="1.5"/><circle cx="0" cy="-335" r="3.5" fill="rgba(212,175,55,.52)"/></g>
+        <g transform="rotate(150)"><line x1="0" y1="-328" x2="0" y2="-274" stroke="rgba(212,175,55,.28)" stroke-width="1.5"/><circle cx="0" cy="-335" r="3.5" fill="rgba(212,175,55,.52)"/></g>
+        <g transform="rotate(180)"><line x1="0" y1="-328" x2="0" y2="-274" stroke="rgba(212,175,55,.28)" stroke-width="1.5"/><circle cx="0" cy="-335" r="3.5" fill="rgba(212,175,55,.52)"/></g>
+        <g transform="rotate(210)"><line x1="0" y1="-328" x2="0" y2="-274" stroke="rgba(212,175,55,.28)" stroke-width="1.5"/><circle cx="0" cy="-335" r="3.5" fill="rgba(212,175,55,.52)"/></g>
+        <g transform="rotate(240)"><line x1="0" y1="-328" x2="0" y2="-274" stroke="rgba(212,175,55,.28)" stroke-width="1.5"/><circle cx="0" cy="-335" r="3.5" fill="rgba(212,175,55,.52)"/></g>
+        <g transform="rotate(270)"><line x1="0" y1="-328" x2="0" y2="-274" stroke="rgba(212,175,55,.28)" stroke-width="1.5"/><circle cx="0" cy="-335" r="3.5" fill="rgba(212,175,55,.52)"/></g>
+        <g transform="rotate(300)"><line x1="0" y1="-328" x2="0" y2="-274" stroke="rgba(212,175,55,.28)" stroke-width="1.5"/><circle cx="0" cy="-335" r="3.5" fill="rgba(212,175,55,.52)"/></g>
+        <g transform="rotate(330)"><line x1="0" y1="-328" x2="0" y2="-274" stroke="rgba(212,175,55,.28)" stroke-width="1.5"/><circle cx="0" cy="-335" r="3.5" fill="rgba(212,175,55,.52)"/></g>
+      </g>
+
+      <!-- Mid ring — 8 saffron petals, counter-clockwise -->
+      <g class="ring-b">
+        <g transform="rotate(  0)"><ellipse cx="0" cy="-205" rx="9" ry="25" fill="rgba(255,140,0,.16)" stroke="rgba(255,140,0,.34)" stroke-width=".9"/></g>
+        <g transform="rotate( 45)"><ellipse cx="0" cy="-205" rx="9" ry="25" fill="rgba(255,140,0,.16)" stroke="rgba(255,140,0,.34)" stroke-width=".9"/></g>
+        <g transform="rotate( 90)"><ellipse cx="0" cy="-205" rx="9" ry="25" fill="rgba(255,140,0,.16)" stroke="rgba(255,140,0,.34)" stroke-width=".9"/></g>
+        <g transform="rotate(135)"><ellipse cx="0" cy="-205" rx="9" ry="25" fill="rgba(255,140,0,.16)" stroke="rgba(255,140,0,.34)" stroke-width=".9"/></g>
+        <g transform="rotate(180)"><ellipse cx="0" cy="-205" rx="9" ry="25" fill="rgba(255,140,0,.16)" stroke="rgba(255,140,0,.34)" stroke-width=".9"/></g>
+        <g transform="rotate(225)"><ellipse cx="0" cy="-205" rx="9" ry="25" fill="rgba(255,140,0,.16)" stroke="rgba(255,140,0,.34)" stroke-width=".9"/></g>
+        <g transform="rotate(270)"><ellipse cx="0" cy="-205" rx="9" ry="25" fill="rgba(255,140,0,.16)" stroke="rgba(255,140,0,.34)" stroke-width=".9"/></g>
+        <g transform="rotate(315)"><ellipse cx="0" cy="-205" rx="9" ry="25" fill="rgba(255,140,0,.16)" stroke="rgba(255,140,0,.34)" stroke-width=".9"/></g>
+      </g>
+
+      <!-- Inner ring — 6 gold triangles, clockwise -->
+      <g class="ring-c">
+        <g transform="rotate(  0)"><polygon points="0,-132 -12,-110 12,-110" fill="rgba(212,175,55,.22)" stroke="rgba(212,175,55,.5)" stroke-width=".8"/></g>
+        <g transform="rotate( 60)"><polygon points="0,-132 -12,-110 12,-110" fill="rgba(212,175,55,.22)" stroke="rgba(212,175,55,.5)" stroke-width=".8"/></g>
+        <g transform="rotate(120)"><polygon points="0,-132 -12,-110 12,-110" fill="rgba(212,175,55,.22)" stroke="rgba(212,175,55,.5)" stroke-width=".8"/></g>
+        <g transform="rotate(180)"><polygon points="0,-132 -12,-110 12,-110" fill="rgba(212,175,55,.22)" stroke="rgba(212,175,55,.5)" stroke-width=".8"/></g>
+        <g transform="rotate(240)"><polygon points="0,-132 -12,-110 12,-110" fill="rgba(212,175,55,.22)" stroke="rgba(212,175,55,.5)" stroke-width=".8"/></g>
+        <g transform="rotate(300)"><polygon points="0,-132 -12,-110 12,-110" fill="rgba(212,175,55,.22)" stroke="rgba(212,175,55,.5)" stroke-width=".8"/></g>
+      </g>
+
+      <!-- Center glows -->
+      <circle r="78" fill="rgba(255,140,0,.06)" class="pulse"/>
+      <circle r="50" fill="rgba(212,175,55,.11)" class="pulse pulse-lag"/>
+      <circle r="24" fill="rgba(255,140,0,.19)" class="pulse"/>
+
+      <!-- Bindi — the signature dot -->
+      <circle cx="0" cy="0" r="7" fill="#FF8C00" class="bindi"/>
+    </svg>
+  </div>
+
+  <!-- ── Floating Musical Notes ── -->
+  <div class="notes" aria-hidden="true">
+    <span class="n" style="left:7%;--sz:1.8rem;--dur:9s;--del:0s;--r0:-15deg;--r1:10deg">♪</span>
+    <span class="n" style="left:17%;--sz:1.2rem;--dur:11s;--del:2.5s;--r0:5deg;--r1:-12deg">♫</span>
+    <span class="n" style="left:29%;--sz:2rem;--dur:8.5s;--del:1s;--r0:-8deg;--r1:18deg">♩</span>
+    <span class="n" style="left:44%;--sz:1.4rem;--dur:10s;--del:3.5s;--r0:12deg;--r1:-6deg">♪</span>
+    <span class="n" style="left:56%;--sz:1.6rem;--dur:9.5s;--del:.5s;--r0:-10deg;--r1:14deg">♫</span>
+    <span class="n" style="left:68%;--sz:1.3rem;--dur:11.5s;--del:2s;--r0:8deg;--r1:-10deg">♩</span>
+    <span class="n" style="left:79%;--sz:1.9rem;--dur:8s;--del:4s;--r0:-5deg;--r1:20deg">♪</span>
+    <span class="n" style="left:91%;--sz:1.5rem;--dur:10.5s;--del:1.5s;--r0:15deg;--r1:-8deg">♫</span>
+    <span class="n" style="left:3%;--sz:1.1rem;--dur:13s;--del:3s;--r0:-18deg;--r1:5deg">𝄞</span>
+    <span class="n" style="left:63%;--sz:2.2rem;--dur:7.5s;--del:5s;--r0:6deg;--r1:-15deg">𝄞</span>
+  </div>
+
+  <!-- ── Portrait Image (img 1) ── -->
+  <div class="hero-portrait">
+    <div class="hero-portrait-frame">
+      <img src="img (1).jpg" alt="Juhi — Singer" loading="eager">
+    </div>
+    <div class="hero-portrait-ring" aria-hidden="true"></div>
+  </div>
+
+  <!-- ── Text Content ── -->
+  <div class="hero-body">
+    <p class="eyebrow">The voice of</p>
+    <h1 class="hero-name">JUHI</h1>
+    <p class="tagline">Where Soul Meets Song</p>
+    <p class="roles">Singer &bull; Performer &bull; Artist</p>
+  </div>
+
+  <!-- ── Wave Transition ── -->
+  <div class="wave-wrap" aria-hidden="true">
+    <div class="wave-belt">
+      <svg viewBox="0 0 1000 82" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M0,44 Q125,14 250,44 Q375,74 500,44 Q625,14 750,44 Q875,74 1000,44 L1000,82 L0,82 Z"
+              fill="rgba(22,13,44,.96)"/>
+      </svg>
+      <svg viewBox="0 0 1000 82" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M0,44 Q125,14 250,44 Q375,74 500,44 Q625,14 750,44 Q875,74 1000,44 L1000,82 L0,82 Z"
+              fill="rgba(22,13,44,.96)"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ABOUT ═════════════════════════════════════ -->
+<section class="about" id="about">
+  <div class="about-in">
+    <!-- ── About Image (img 2) ── -->
+    <div class="about-img-wrap" id="aboutImgWrap">
+      <span class="corner-dot"></span>
+      <span class="corner-dot"></span>
+      <span class="corner-dot"></span>
+      <span class="corner-dot"></span>
+      <div class="about-img-frame">
+        <img src="img (2).jpg" alt="Juhi smiling" loading="lazy">
+      </div>
+    </div>
+
+    <!-- ── About Text ── -->
+    <div class="about-text">
+      <span class="sec-tag">About</span>
+      <p class="pull-quote">
+        Her voice carries the warmth of jasmine and the weight of dusk — a melody that lingers long after the music fades.
+      </p>
+      <p class="bio">
+        Juhi is a <b>fabulous singer</b> whose music bridges the intimate and the infinite. Rooted in the rich tradition of <b>Indian classical music</b>, her voice moves effortlessly between the meditative and the joyful — from the sacred raga to the tender moment of a heartfelt song. She sings not just with her voice, but with her whole being. Every note a small act of devotion. Every performance a shared breath with the audience.
+      </p>
+      <div class="ornament" aria-hidden="true">
+        <div class="o-line"></div>
+        <svg width="18" height="18" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10,2 L12,8 L18,8 L13,12 L15,18 L10,14 L5,18 L7,12 L2,8 L8,8 Z"
+                fill="rgba(212,175,55,.42)"/>
+        </svg>
+        <div class="o-line"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MUSIC ══════════════════════════════════════ -->
+<section class="music" id="music-section">
+  <div class="music-in">
+    <h2 class="sec-h scroll-reveal">The <em>Art</em> of Juhi</h2>
+
+    <div class="cards">
+      <div class="card scroll-reveal">
+        <div class="card-icon">🎵</div>
+        <div class="card-name">Classical Roots</div>
+        <p class="card-text">
+          Trained in the Hindustani tradition, Juhi's foundation runs deep — every improvisation built on years of riyaaz and quiet devotion to the craft.
+        </p>
+      </div>
+      <div class="card scroll-reveal">
+        <div class="card-icon">✨</div>
+        <div class="card-name">Soulful Fusion</div>
+        <p class="card-text">
+          She weaves folk melodies, devotional compositions, and contemporary sensibility into something entirely her own — unmistakable, warm, and radiant.
+        </p>
+      </div>
+      <div class="card scroll-reveal">
+        <div class="card-icon">🌸</div>
+        <div class="card-name">Pure Presence</div>
+        <p class="card-text">
+          To hear Juhi sing is to be in a room flooded with warmth. Her smile, her joy, her bindi — all part of the music.
+        </p>
+      </div>
+    </div>
+
+    <!-- Animated equalizer -->
+    <div class="eq" aria-hidden="true">
+      <div class="bar" style="height:46px;--d:.62s;--dl:.00s"></div>
+      <div class="bar" style="height:40px;--d:.80s;--dl:.05s"></div>
+      <div class="bar" style="height:50px;--d:.55s;--dl:.10s"></div>
+      <div class="bar" style="height:36px;--d:.90s;--dl:.15s"></div>
+      <div class="bar" style="height:48px;--d:.70s;--dl:.20s"></div>
+      <div class="bar" style="height:44px;--d:.60s;--dl:.25s"></div>
+      <div class="bar" style="height:38px;--d:1.0s;--dl:.30s"></div>
+      <div class="bar" style="height:52px;--d:.58s;--dl:.35s"></div>
+      <div class="bar" style="height:46px;--d:.75s;--dl:.40s"></div>
+      <div class="bar" style="height:54px;--d:.65s;--dl:.45s"></div>
+      <div class="bar" style="height:34px;--d:.85s;--dl:.50s"></div>
+      <div class="bar" style="height:50px;--d:.62s;--dl:.55s"></div>
+      <div class="bar" style="height:42px;--d:.72s;--dl:.60s"></div>
+      <div class="bar" style="height:48px;--d:.88s;--dl:.65s"></div>
+      <div class="bar" style="height:40px;--d:.56s;--dl:.70s"></div>
+      <div class="bar" style="height:44px;--d:.78s;--dl:.75s"></div>
+      <div class="bar" style="height:50px;--d:.64s;--dl:.80s"></div>
+      <div class="bar" style="height:38px;--d:.95s;--dl:.85s"></div>
+      <div class="bar" style="height:46px;--d:.57s;--dl:.90s"></div>
+      <div class="bar" style="height:42px;--d:.82s;--dl:.95s"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ═════════════════════════════════════ -->
+<footer class="footer">
+  <div class="footer-name">Juhi</div>
+  <div class="footer-sub">Singer &middot; India</div>
+  <span class="footer-note">made with love for a fabulous voice</span>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
