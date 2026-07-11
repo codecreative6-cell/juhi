@@ -6,6 +6,159 @@
   --cream:   #F5E6C8;
 }
 
+/* ═══════════════════════════════════════════════════
+   SPLASH OVERLAY — Entry gate for audio unlock
+═══════════════════════════════════════════════════ */
+.splash-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: var(--night);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity .8s ease, visibility .8s ease;
+}
+.splash-overlay.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.splash-content {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  animation: fade-rise 1s ease .2s both;
+}
+
+/* Splash mandala */
+.splash-mandala {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 2rem;
+}
+.splash-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid;
+}
+.splash-ring-1 {
+  border-color: rgba(212,175,55,.15);
+  animation: rotate-cw 20s linear infinite;
+}
+.splash-ring-2 {
+  inset: 20px;
+  border-color: rgba(255,140,0,.2);
+  border-style: dashed;
+  animation: rotate-ccw 14s linear infinite;
+}
+.splash-ring-3 {
+  inset: 45px;
+  border-color: rgba(212,175,55,.25);
+  animation: rotate-cw 9s linear infinite;
+}
+.splash-bindi {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--saffron);
+  animation: bindi-breathe 2.5s ease-in-out infinite;
+  box-shadow: 0 0 20px rgba(255,140,0,.5);
+}
+
+.splash-eyebrow {
+  font-weight: 300;
+  font-size: .65rem;
+  letter-spacing: .55em;
+  text-transform: uppercase;
+  color: var(--saffron);
+  opacity: .7;
+  margin-bottom: .8rem;
+}
+.splash-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3.5rem, 14vw, 7rem);
+  font-weight: 900;
+  line-height: .9;
+  background: linear-gradient(138deg, #F5E6C8 5%, #D4AF37 38%, #FF8C00 68%, #D4AF37 92%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: .6rem;
+}
+.splash-sub {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(.85rem, 2vw, 1.15rem);
+  color: var(--cream);
+  opacity: .65;
+  margin-bottom: 2.5rem;
+}
+
+.splash-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .7rem;
+  padding: 16px 38px;
+  border: 2px solid rgba(212,175,55,.35);
+  border-radius: 999px;
+  background: rgba(212,175,55,.08);
+  color: var(--gold);
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: .08em;
+  cursor: pointer;
+  transition: all .35s ease;
+  animation: splash-pulse 2.2s ease-in-out infinite;
+}
+.splash-btn:hover {
+  background: rgba(212,175,55,.18);
+  border-color: var(--saffron);
+  transform: scale(1.05);
+  box-shadow: 0 0 35px rgba(255,140,0,.25);
+}
+.splash-btn-icon {
+  font-size: 1.3rem;
+  animation: splash-note-bounce 1.5s ease-in-out infinite;
+}
+
+.splash-hint {
+  margin-top: 1.2rem;
+  font-size: .7rem;
+  color: rgba(245,230,200,.3);
+  letter-spacing: .1em;
+}
+
+@keyframes splash-pulse {
+  0%, 100% { box-shadow: 0 0 15px rgba(255,140,0,.1); }
+  50%       { box-shadow: 0 0 30px rgba(255,140,0,.22); }
+}
+@keyframes splash-note-bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-4px); }
+}
+
+/* Mobile splash */
+@media (max-width: 480px) {
+  .splash-mandala {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 1.5rem;
+  }
+  .splash-btn {
+    padding: 14px 30px;
+    font-size: .9rem;
+  }
+}
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
